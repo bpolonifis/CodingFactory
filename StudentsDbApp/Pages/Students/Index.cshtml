@@ -1,0 +1,46 @@
+﻿@page "/Students/getall"
+@model StudentsDbApp.Pages.Students.IndexModel
+@{
+}
+
+<h2 class="text-center mb-4">Students</h2>
+<a class="btn btn-primary btn-lg mb-4" href="/Students/Create">New Student</a>
+
+<table class="mx-auto table table-dark text-center">
+    <thead>
+        <tr>
+            <th colspan="4"> Coding Factory Students</th>
+        </tr>
+        <tr>
+            <th>Κωδικός</th>
+            <th>Όνομα</th>
+            <th>Επίθετο</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.StudentDto.Count != 0)
+        {
+            @foreach (var student in Model.StudentDto)
+            {
+                <tr>
+                    <td>@student.Id</td>
+                    <td>@student.Firstname</td>
+                    <td>@student.Lastname</td>
+                    <td>
+                        <a class="btn btn-primary" href="/Students/@student.Id/Update">Edit</a>
+                        <a class="btn btn-primary" href="Javascript:void(0);"   
+                                onclick="confimDelete('@student.Id')">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div>
+    @if (Model.ErrorObj is not null)
+    {
+        <p> @Model.ErrorObj.Message</p>
+    }
+</div>
+<script src="~/js/Javascript.js"></script>

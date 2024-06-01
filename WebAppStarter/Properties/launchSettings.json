@@ -1,0 +1,28 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:14827",
+      "sslPort": 44390
+    }
+  },
+  "profiles": {
+    "WebAppStarter": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000", //Well known ports - den einai dynamic ( ta valame me to xeri)
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development" //Development Staging Production 
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
